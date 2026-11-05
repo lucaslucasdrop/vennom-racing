@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENNOM RACING - Equipamentos e Peças para Motocross</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span class="shipping-info">
+                    <span class="truck-icon">🚚</span>
+                    FRETE GRÁTIS acima de <strong>R$ 100</strong> para todo Brasil
+                </span>
+                <div class="top-links">
+                    <a href="#">Rastrear Pedido</a>
+                    <a href="#">Central de Ajuda</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <img src="assets/logo.png" alt="VENNOM RACING" class="logo-img">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar capacetes, botas, equipamentos..." class="search-input">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <a href="#" class="header-action">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Entrar</span>
+                    </a>
+                    <a href="#" class="header-action wishlist">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="#" class="header-action cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span class="badge cart-count">0</span>
+                        <span class="cart-total">R$ 0,00</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item has-dropdown">
+                    <a href="#">
+                        Equipamentos
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Capacetes</h4>
+                            <a href="#">Capacetes Motocross</a>
+                            <a href="#">Capacetes On Road</a>
+                            <a href="#">Capacetes Abertos</a>
+                            <a href="#">Viseiras</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Botas</h4>
+                            <a href="#">Botas Motocross</a>
+                            <a href="#">Botas Alpinestars</a>
+                            <a href="#">Botas Gaerne</a>
+                            <a href="#">Botas IMS</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Óculos</h4>
+                            <a href="#">Óculos Oakley</a>
+                            <a href="#">Óculos 100%</a>
+                            <a href="#">Óculos Leatt</a>
+                            <a href="#">Lentes e Tear-Offs</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Luvas</h4>
+                            <a href="#">Luvas Motocross</a>
+                            <a href="#">Luvas Alpinestars</a>
+                            <a href="#">Luvas Fox</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">
+                        Roupas
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Calças e Camisas</h4>
+                            <a href="#">Calças Motocross</a>
+                            <a href="#">Camisas Motocross</a>
+                            <a href="#">Kit Calça + Camisa</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Meiões</h4>
+                            <a href="#">Meiões Motocross</a>
+                            <a href="#">Meiões Fox</a>
+                            <a href="#">Meiões Alpinestars</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">
+                        Proteção
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Proteções</h4>
+                            <a href="#">Coletes</a>
+                            <a href="#">Joelheiras</a>
+                            <a href="#">Cotoveleiras</a>
+                            <a href="#">Protetores de Pescoço</a>
+                            <a href="#">Cintas Abdominais</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">
+                        Peças
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Motor</h4>
+                            <a href="#">Filtros de Ar</a>
+                            <a href="#">Filtros de Óleo</a>
+                            <a href="#">Escapamentos</a>
+                            <a href="#">Pistões</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Guidão</h4>
+                            <a href="#">Guidões</a>
+                            <a href="#">Manoplas</a>
+                            <a href="#">Manetes</a>
+                            <a href="#">Protetores de Mão</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Relação</h4>
+                            <a href="#">Correntes</a>
+                            <a href="#">Coroas</a>
+                            <a href="#">Pinhões</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Casual</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Bike</a>
+                </li>
+                <li class="nav-item highlight">
+                    <a href="#">Promoções</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide active">
+                    <a href="#" class="slide-banner-full">
+                        <img src="assets/banner-fasthouse.png" alt="Fasthouse - Só encontra aqui">
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#asw-section" class="slide-banner-full">
+                        <img src="assets/banner-asw-r3.png" alt="Capacete ASW R3">
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#botas-section" class="slide-banner-full">
+                        <img src="assets/banner-leatt.png" alt="Leatt Off-Road">
+                    </a>
+                </div>
+            </div>
+            <button class="slider-btn prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+            </button>
+            <button class="slider-btn next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m9 18 6-6-6-6"/>
+                </svg>
+            </button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTO EM DESTAQUE -->
+    <section class="featured-product-section">
+        <div class="container">
+            <div class="featured-product">
+                <div class="featured-badge">
+                    <span class="pulse-dot"></span>
+                    LANÇAMENTO 2027
+                </div>
+                <div class="featured-content">
+                    <div class="featured-gallery">
+                        <div class="featured-main-image">
+                            <img src="assets/products/r3/r3-01.jpg" alt="Capacete ASW R3 Pointer 2027" id="featured-image">
+                        </div>
+                        <div class="featured-thumbnails">
+                            <div class="featured-thumb active" onclick="changeFeaturedImage('assets/products/r3/r3-01.jpg', this)">
+                                <img src="assets/products/r3/r3-01.jpg" alt="Cor 1">
+                            </div>
+                            <div class="featured-thumb" onclick="changeFeaturedImage('assets/products/r3/r3-05.jpg', this)">
+                                <img src="assets/products/r3/r3-05.jpg" alt="Cor 2">
+                            </div>
+                            <div class="featured-thumb" onclick="changeFeaturedImage('assets/products/r3/r3-08.jpg', this)">
+                                <img src="assets/products/r3/r3-08.jpg" alt="Cor 3">
+                            </div>
+                            <div class="featured-thumb" onclick="changeFeaturedImage('assets/products/r3/r3-19.jpg', this)">
+                                <img src="assets/products/r3/r3-19.jpg" alt="Cor 4">
+                            </div>
+                            <div class="featured-thumb more-colors" onclick="window.location.href='produto-asw-r3.html'">
+                                <span>+17</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-info">
+                        <span class="featured-brand">ASW RACING</span>
+                        <h2 class="featured-title">Capacete ASW R3 Pointer 2027</h2>
+                        <p class="featured-description">
+                            Desenvolvido para pilotos que exigem máxima segurança, conforto e desempenho.
+                            Casco em ABS de alta resistência, EPS com 4 densidades e certificação ECE 22.06.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                21 opções de cores exclusivas
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Sistema de ventilação com 15 aberturas
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Homologação internacional ECE 22.06
+                            </li>
+                        </ul>
+                        <div class="featured-price-box">
+                            <div class="featured-price">
+                                <span class="price-label">Por apenas</span>
+                                <span class="price-value">R$ 197,90</span>
+                                <span class="price-installments">ou 10x de R$ 85,99 sem juros</span>
+                            </div>
+                            <div class="featured-actions">
+                                <a href="produto-asw-r3.html" class="btn-featured-buy">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="9" cy="21" r="1"/>
+                                        <circle cx="20" cy="21" r="1"/>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                    </svg>
+                                    VER TODAS AS CORES
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#botas-section" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-bota-street.png" alt="Botas Street">
+                    </div>
+                    <span>Botas Street</span>
+                </a>
+                <a href="#botas-section" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-bota-mx.png" alt="Botas Off-Road">
+                    </div>
+                    <span>Botas Off-Road</span>
+                </a>
+                <a href="#capacetes-section" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-capacete-mx.png" alt="Capacetes Off-Road">
+                    </div>
+                    <span>Capacetes MX</span>
+                </a>
+                <a href="#capacetes-section" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-capacete-street.png" alt="Capacetes Street">
+                    </div>
+                    <span>Capacetes Street</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-macacao.png" alt="Macacões">
+                    </div>
+                    <span>Macacões</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-image-box">
+                        <img src="assets/cat-camisa.png" alt="Camisas Motocross">
+                    </div>
+                    <span>Camisas MX</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botas Alpinestars -->
+    <section class="products-section" id="botas-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>BOTAS <span class="highlight-text">ALPINESTARS</span></h2>
+                <a href="botas.html" class="view-all">Ver todos →</a>
+            </div>
+            <div class="products-grid" id="all-products-grid">
+                <!-- Produtos carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Capacetes Airoh -->
+    <section class="products-section" id="capacetes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>CAPACETES <span class="highlight-text">AIROH</span></h2>
+                <a href="capacetes.html" class="view-all">Ver todos →</a>
+            </div>
+            <div class="products-grid" id="capacetes-grid">
+                <!-- Capacetes carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Capacetes ASW -->
+    <section class="products-section" id="asw-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>CAPACETES <span class="highlight-text">ASW</span></h2>
+                <a href="capacetes.html" class="view-all">Ver todos →</a>
+            </div>
+            <div class="products-grid" id="asw-grid">
+                <!-- Capacetes ASW carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>GRANDES <span class="highlight-text">MARCAS</span></h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="brands-logos">
+                <img src="assets/marcas-logos.png" alt="ASW Racing, Alpinestars, MT Helmets, Norisk, 100%, Sidi" class="brands-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number counter-number" data-target="15000">0</span>
+                    <span class="stat-label">Clientes Satisfeitos</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number counter-number" data-target="28500">0</span>
+                    <span class="stat-label">Pedidos Entregues</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">Avaliação Média</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number counter-number" data-target="5570">0</span>
+                    <span class="stat-label">Cidades Atendidas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h4>Frete Grátis</h4>
+                        <p>Acima de R$ 100 para todo Brasil</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h4>Compra Segura</h4>
+                        <p>Seus dados sempre protegidos</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h4>Parcele em 12x</h4>
+                        <p>Sem juros no cartão</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <h4>Atendimento</h4>
+                        <p>Suporte rápido e eficiente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>RECEBA <span class="highlight-text">OFERTAS EXCLUSIVAS</span></h3>
+                    <p>Cadastre-se e seja o primeiro a saber das promoções!</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Digite seu melhor e-mail" required>
+                    <button type="submit" class="btn-primary">CADASTRAR</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/logo.png" alt="VENNOM RACING" class="footer-logo">
+                    <p>A melhor loja de equipamentos e peças para motocross do Brasil. Qualidade e preço justo para você acelerar com segurança.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Formas de Pagamento</a></li>
+                        <li><a href="#">Prazo de Entrega</a></li>
+                        <li><a href="#">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            (41) 3586-6107
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            contato@vennomracing.com.br
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            Seg a Sex: 9h às 18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>Formas de Pagamento:</span>
+                    <div class="payment-icons">
+                        <img src="https://via.placeholder.com/40x25/1a1a1a/ffffff?text=VISA" alt="Visa">
+                        <img src="https://via.placeholder.com/40x25/1a1a1a/ffffff?text=MC" alt="Mastercard">
+                        <img src="https://via.placeholder.com/40x25/1a1a1a/ffffff?text=ELO" alt="Elo">
+                        <img src="https://via.placeholder.com/40x25/1a1a1a/ffffff?text=PIX" alt="Pix">
+                        <img src="https://via.placeholder.com/40x25/1a1a1a/ffffff?text=BOLETO" alt="Boleto">
+                    </div>
+                </div>
+                <div class="security-seals">
+                    <img src="https://via.placeholder.com/80x40/1a1a1a/39ff14?text=SSL" alt="Site Seguro">
+                    <img src="https://via.placeholder.com/80x40/1a1a1a/39ff14?text=GOOGLE" alt="Google Safe">
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 VENNOM RACING - Todos os direitos reservados.</p>
+                <p>🧾 CNPJ: 55.813.146/0001-48</p>
+                <p class="store-address">📍 Av. Ramalho Piva, 182 – Centro | Santo Antônio do Sudoeste – PR</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="/" class="mobile-nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span>Início</span>
+        </a>
+        <a href="#botas-section" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            <span>Produtos</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <span>Favoritos</span>
+        </a>
+        <a href="#" class="mobile-nav-item" onclick="openSearch()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+            </svg>
+            <span>Buscar</span>
+        </a>
+        <a href="#" class="mobile-nav-item cart-nav">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="mobile-cart-badge">0</span>
+            <span>Carrinho</span>
+        </a>
+    </nav>
+
+    <script src="js/products.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Renderizar produtos por categoria
+        document.addEventListener('DOMContentLoaded', function() {
+            renderBotas();
+            renderCapacetesAiroh();
+            renderCapacetesASW();
+            updateCartUI();
+        });
+
+        function renderBotas() {
+            const container = document.getElementById('all-products-grid');
+            if (!container) return;
+            const botas = PRODUCTS.filter(p => p.category === 'Botas');
+            container.innerHTML = botas.map(p => createProductCard(p)).join('');
+        }
+
+        function renderCapacetesAiroh() {
+            const container = document.getElementById('capacetes-grid');
+            if (!container) return;
+            const capacetes = PRODUCTS.filter(p => p.brand === 'Airoh');
+            container.innerHTML = capacetes.map(p => createProductCard(p)).join('');
+        }
+
+        function renderCapacetesASW() {
+            const container = document.getElementById('asw-grid');
+            if (!container) return;
+            const capacetes = PRODUCTS.filter(p => p.brand === 'ASW');
+            container.innerHTML = capacetes.map(p => createProductCard(p)).join('');
+        }
+
+        function createProductCard(product) {
+            const productUrl = product.customPage ? product.customPage : `produto.html?p=${product.slug}`;
+            return `
+                <div class="product-card">
+                    <div class="product-badges">
+                        ${product.isNew ? `<span class="badge-new">Lançamento</span>` : ''}
+                        ${product.discount > 0 ? `<span class="badge-sale">-${product.discount}%</span>` : ''}
+                        ${product.freeShipping ? `<span class="badge-free-shipping">Frete Grátis</span>` : ''}
+                    </div>
+                    <button class="btn-wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <a href="${productUrl}" class="product-image">
+                        <img src="${product.images[0]}" alt="${product.name}">
+                    </a>
+                    <div class="product-info">
+                        <span class="product-brand">${product.brand}</span>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(${product.reviews})</span>
+                        </div>
+                        <div class="product-prices">
+                            ${product.priceOld ? `<span class="price-old">${formatPrice(product.priceOld)}</span>` : ''}
+                            <span class="price-current">${formatPrice(product.price)}</span>
+                        </div>
+                        <span class="price-installments">${product.installments} sem juros</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="${productUrl}" class="btn-add-cart">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/>
+                                <circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                            VER PRODUTO
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function quickAddToCart(productId) {
+            const product = getProductById(productId);
+            if (product) {
+                let cart = JSON.parse(localStorage.getItem('vennom_cart') || '[]');
+                const existing = cart.find(item => item.id === productId);
+                if (existing) {
+                    existing.quantity++;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.images[0],
+                        quantity: 1
+                    });
+                }
+                localStorage.setItem('vennom_cart', JSON.stringify(cart));
+                updateCartUI();
+                showNotification('Produto adicionado ao carrinho!');
+            }
+        }
+
+        function updateCartUI() {
+            const cart = JSON.parse(localStorage.getItem('vennom_cart') || '[]');
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const countEl = document.querySelector('.cart-count');
+            const totalEl = document.querySelector('.cart-total');
+            const mobileCartBadge = document.querySelector('.mobile-cart-badge');
+            if (countEl) countEl.textContent = count;
+            if (totalEl) totalEl.textContent = formatPrice(total);
+            if (mobileCartBadge) mobileCartBadge.textContent = count;
+        }
+
+        function openSearch() {
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setTimeout(() => searchInput.focus(), 300);
+            }
+        }
+
+        function showNotification(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Função para trocar imagem do produto em destaque
+        function changeFeaturedImage(src, element) {
+            document.getElementById('featured-image').src = src;
+            document.querySelectorAll('.featured-thumb').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>

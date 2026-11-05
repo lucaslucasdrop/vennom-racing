@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botas Alpinestars - VENNOM RACING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .category-page {
+            padding: 40px 0;
+        }
+
+        .category-header {
+            margin-bottom: 40px;
+        }
+
+        .category-header h1 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .category-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .category-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+
+        /* Filtros */
+        .filters-sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-group {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .filter-group h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .filter-option:hover {
+            color: var(--primary);
+        }
+
+        .filter-option input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .price-range {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .price-range input {
+            flex: 1;
+            padding: 10px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+
+        .price-range input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn-filter {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            margin-top: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-filter:hover {
+            background: var(--primary-light);
+        }
+
+        /* Toolbar */
+        .products-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+
+        .results-count {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .results-count strong {
+            color: var(--primary);
+        }
+
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sort-options label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .sort-options select {
+            padding: 10px 16px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .sort-options select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Grid de Produtos */
+        .category-products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 1200px) {
+            .category-products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .category-products {
+                grid-template-columns: 1fr;
+            }
+
+            .products-toolbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span class="shipping-info">🚚 FRETE GRÁTIS acima de R$ 100 para todo Brasil</span>
+                <div class="top-links">
+                    <a href="#">Rastrear Pedido</a>
+                    <a href="#">Central de Ajuda</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="VENNOM RACING" class="logo-img">
+                </a>
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar capacetes, botas, equipamentos..." class="search-input">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="header-action">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Entrar</span>
+                    </a>
+                    <a href="#" class="header-action cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span class="badge cart-count">0</span>
+                        <span class="cart-total">R$ 0,00</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav class="breadcrumb" style="padding: 16px 0; font-size: 13px; color: #666;">
+            <a href="index.html" style="color: #b0b0b0;">Home</a>
+            <span style="margin: 0 8px;">/</span>
+            <a href="#" style="color: #b0b0b0;">Equipamentos</a>
+            <span style="margin: 0 8px;">/</span>
+            <span style="color: #39FF14;">Botas Alpinestars</span>
+        </nav>
+    </div>
+
+    <!-- Página da Categoria -->
+    <section class="category-page">
+        <div class="container">
+            <div class="category-header">
+                <h1>BOTAS <span class="highlight-text">ALPINESTARS</span></h1>
+                <p>As melhores botas de motocross e enduro do mundo. Proteção e performance para sua pilotagem.</p>
+            </div>
+
+            <div class="category-layout">
+                <!-- Filtros -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h4>Subcategoria</h4>
+                        <label class="filter-option">
+                            <input type="checkbox" checked> Todas
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Botas Motocross
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Botas Enduro
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Botas Infantil
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Linha</h4>
+                        <label class="filter-option">
+                            <input type="checkbox"> Tech 10
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Tech 7
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Tech 5
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Tech 3
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Preço</h4>
+                        <div class="price-range">
+                            <input type="text" placeholder="R$ Min">
+                            <span>-</span>
+                            <input type="text" placeholder="R$ Max">
+                        </div>
+                        <button class="btn-filter">Aplicar Filtros</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Tamanho</h4>
+                        <label class="filter-option">
+                            <input type="checkbox"> 8 USA (39/40)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> 9 USA (40/41)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> 10 USA (41/42)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> 11 USA (42/43)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> 12 USA (43/44)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> 13 USA (44/45)
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Disponibilidade</h4>
+                        <label class="filter-option">
+                            <input type="checkbox" checked> Frete Grátis
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox"> Em Promoção
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Produtos -->
+                <div class="products-area">
+                    <div class="products-toolbar">
+                        <span class="results-count">Exibindo <strong id="product-count">20</strong> produtos</span>
+                        <div class="sort-options">
+                            <label>Ordenar por:</label>
+                            <select id="sort-select">
+                                <option value="featured">Mais Relevantes</option>
+                                <option value="price-asc">Menor Preço</option>
+                                <option value="price-desc">Maior Preço</option>
+                                <option value="name">Nome A-Z</option>
+                                <option value="discount">Maior Desconto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="category-products" id="products-grid">
+                        <!-- Produtos via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/logo.png" alt="VENNOM RACING" class="footer-logo">
+                    <p>A melhor loja de equipamentos e peças para motocross do Brasil.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li>(41) 3586-6107</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 VENNOM RACING - Todos os direitos reservados.</p>
+                <p>🧾 CNPJ: 55.813.146/0001-48</p>
+                <p class="store-address">📍 Av. Ramalho Piva, 182 – Centro | Santo Antônio do Sudoeste – PR</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5541999999999" class="whatsapp-float" target="_blank">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="js/products.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+
+            document.getElementById('sort-select').addEventListener('change', function() {
+                renderProducts(this.value);
+            });
+        });
+
+        function renderProducts(sortBy = 'featured') {
+            let products = [...PRODUCTS];
+
+            // Ordenar
+            switch(sortBy) {
+                case 'price-asc':
+                    products.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    products.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    products.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'discount':
+                    products.sort((a, b) => b.discount - a.discount);
+                    break;
+            }
+
+            document.getElementById('product-count').textContent = products.length;
+
+            const container = document.getElementById('products-grid');
+            container.innerHTML = products.map(p => `
+                <div class="product-card">
+                    <div class="product-badges">
+                        ${p.discount > 0 ? `<span class="badge-sale">-${p.discount}%</span>` : ''}
+                        ${p.freeShipping ? `<span class="badge-free-shipping">Frete Grátis</span>` : ''}
+                    </div>
+                    <button class="btn-wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <a href="produto.html?p=${p.slug}" class="product-image">
+                        <img src="${p.images[0]}" alt="${p.name}">
+                    </a>
+                    <div class="product-info">
+                        <span class="product-brand">${p.brand}</span>
+                        <h3 class="product-name">${p.name}</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(${p.reviews})</span>
+                        </div>
+                        <div class="product-prices">
+                            ${p.priceOld ? `<span class="price-old">${formatPrice(p.priceOld)}</span>` : ''}
+                            <span class="price-current">${formatPrice(p.price)}</span>
+                        </div>
+                        <span class="price-installments">${p.installments} sem juros</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-add-cart">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/>
+                                <circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                            ADICIONAR
+                        </button>
+                        <a href="produto.html?p=${p.slug}" class="btn-quick-buy">VER</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
