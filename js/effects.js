@@ -174,19 +174,20 @@ function initSocialProof() {
         { name: 'Caio R.', city: 'São Miguel do Oeste - SC' }
     ];
 
+    // Produtos com imagens reais
     const products = [
-        'Capacete ASW R3 Pointer',
-        'Bota Alpinestars Tech 7',
-        'Kit Camisa + Calça Fox',
-        'Óculos Dragon MDX',
-        'Luvas Alpinestars Radar',
-        'Capacete Airoh Twist 3.0',
-        'Bota Gaerne SG-12',
-        'Colete Protetor Leatt'
+        { name: 'Capacete ASW R3 Pointer', img: 'assets/products/r3/r3-01.jpg' },
+        { name: 'Capacete ASW R3 Preto Fosco', img: 'assets/products/r3/r3-06.jpg' },
+        { name: 'Capacete ASW R3 Neon', img: 'assets/products/r3/r3-03.jpg' },
+        { name: 'Bota Alpinestars Tech 7', img: 'https://www.mxparts.com.br/imagens_produtos/media/bota-alpinestars-tech-7-red-bud-100860.jpg' },
+        { name: 'Bota Alpinestars Tech 5', img: 'https://www.mxparts.com.br/imagens_produtos/media/bota-alpinestars-tech5-80831.jpg' },
+        { name: 'Capacete Airoh Twist 3.0', img: 'https://www.mxparts.com.br/imagens_produtos/media/capacete-airoh-twist-3-0-rainbow-67851.jpg' },
+        { name: 'Capacete Airoh Wraap', img: 'https://www.mxparts.com.br/imagens_produtos/media/capacete-airoh-wraap-feel-2025-105298.jpg' },
+        { name: 'Óculos 100% Racecraft', img: 'https://www.mxparts.com.br/imagens_produtos/media/oculos-100-racecraft-2-preto-espelhado-vermelho-100847.jpg' }
     ];
 
     let notificationCount = 0;
-    const maxNotifications = 3; // Máximo de notificações por sessão
+    const maxNotifications = 3;
 
     function showNotification() {
         if (notificationCount >= maxNotifications) return;
@@ -199,11 +200,13 @@ function initSocialProof() {
         const notification = document.createElement('div');
         notification.className = 'social-proof-notification';
         notification.innerHTML = `
-            <div class="spn-icon">🛒</div>
+            <div class="spn-image">
+                <img src="${product.img}" alt="${product.name}" onerror="this.parentElement.innerHTML='🛒'">
+            </div>
             <div class="spn-content">
                 <strong>${buyer.name}</strong>
                 <span class="spn-city">de ${buyer.city}</span>
-                <p>Comprou <span>${product}</span></p>
+                <p>Comprou <span>${product.name}</span></p>
                 <small>há ${minutes} minutos</small>
             </div>
             <button class="spn-close" aria-label="Fechar">×</button>
@@ -223,9 +226,9 @@ function initSocialProof() {
         }, 6000);
     }
 
-    // Primeira notificação após 8 segundos (menos invasivo)
+    // Primeira notificação após 8 segundos
     setTimeout(showNotification, 8000);
-    // Depois a cada 25-45 segundos (menos frequente)
+    // Depois a cada 25-45 segundos
     setInterval(() => {
         if (notificationCount < maxNotifications) {
             showNotification();

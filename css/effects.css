@@ -206,6 +206,25 @@
     flex-shrink: 0;
 }
 
+.spn-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.spn-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .spn-content {
     flex: 1;
 }
