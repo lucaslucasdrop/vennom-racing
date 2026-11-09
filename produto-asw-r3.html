@@ -251,14 +251,46 @@
         }
 
         .variation-label {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .variation-label span {
             color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stock-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 16px;
+        }
+
+        .stock-indicator::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
         .size-options {
@@ -268,23 +300,140 @@
         }
 
         .size-option {
-            min-width: 60px;
-            padding: 14px 20px;
+            min-width: 65px;
+            padding: 16px 24px;
             background: var(--bg-card);
             border: 2px solid var(--border-color);
-            border-radius: var(--radius-md);
-            font-size: 14px;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: var(--text-primary);
+            position: relative;
         }
 
-        .size-option:hover,
+        .size-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(57, 255, 20, 0.2);
+        }
+
         .size-option.active {
             border-color: var(--primary);
-            background: rgba(57, 255, 20, 0.1);
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.15) 0%, rgba(57, 255, 20, 0.05) 100%);
+            box-shadow: 0 0 0 2px var(--bg-dark), 0 0 0 4px var(--primary);
+        }
+
+        .size-option.active::after {
+            content: '✓';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Seletor de Cores - Design Premium */
+        .color-options {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .color-option {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            border: 3px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+
+        .color-option img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .color-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(57, 255, 20, 0.25);
+        }
+
+        .color-option:hover img {
+            transform: scale(1.1);
+        }
+
+        .color-option.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--bg-dark), 0 0 0 4px var(--primary), 0 8px 25px rgba(57, 255, 20, 0.3);
+        }
+
+        .color-option.active::after {
+            content: '✓';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .color-options {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .color-options {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .variation-error {
+            color: var(--danger);
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .variation-error.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .variation-group.error .size-option,
+        .variation-group.error .color-option {
+            border-color: var(--danger);
         }
 
         .action-buttons {
@@ -802,16 +951,27 @@
                         </div>
                     </div>
 
+                    <!-- Indicador de Estoque -->
+                    <div class="stock-indicator">Restam poucas unidades em estoque!</div>
+
+                    <!-- Cores -->
+                    <div class="variation-group" id="color-group">
+                        <div class="variation-label">Escolha a Cor: <span id="selected-color-text">Selecione sua cor favorita</span></div>
+                        <div class="color-options" id="color-options"></div>
+                        <div class="variation-error" id="color-error">⚠️ Selecione uma cor para continuar</div>
+                    </div>
+
                     <!-- Tamanhos -->
-                    <div class="variation-group">
-                        <div class="variation-label">Tamanho: <span id="selected-size">58</span></div>
+                    <div class="variation-group" id="size-group">
+                        <div class="variation-label">Escolha o Tamanho: <span id="selected-size">Selecione</span></div>
                         <div class="size-options">
                             <div class="size-option" onclick="selectSize('54', this)">54</div>
                             <div class="size-option" onclick="selectSize('56', this)">56</div>
-                            <div class="size-option active" onclick="selectSize('58', this)">58</div>
+                            <div class="size-option" onclick="selectSize('58', this)">58</div>
                             <div class="size-option" onclick="selectSize('60', this)">60</div>
                             <div class="size-option" onclick="selectSize('62', this)">62</div>
                         </div>
+                        <div class="variation-error" id="size-error">⚠️ Selecione um tamanho para continuar</div>
                     </div>
 
                     <!-- Botões -->
@@ -1149,14 +1309,24 @@
             { id: 'r3-21', name: 'R3 Tricolor', img: 'assets/products/r3/r3-21.jpg' }
         ];
 
-        let selectedColor = colors[0];
-        let selectedSize = '58';
+        let selectedColor = null;
+        let selectedSize = null;
 
         // Criar thumbnails
         function createThumbnails() {
             const list = document.getElementById('thumbnail-list');
-            list.innerHTML = colors.map((c, i) => `
-                <div class="thumbnail ${i === 0 ? 'active' : ''}" onclick="selectColor('${c.id}')">
+            list.innerHTML = colors.map((c) => `
+                <div class="thumbnail" data-color-id="${c.id}" onclick="selectColor('${c.id}')">
+                    <img src="${c.img}" alt="${c.name}">
+                </div>
+            `).join('');
+        }
+
+        // Criar swatches de cor
+        function createColorSwatches() {
+            const container = document.getElementById('color-options');
+            container.innerHTML = colors.map((c) => `
+                <div class="color-option" data-color-id="${c.id}" onclick="selectColor('${c.id}')" title="${c.name}">
                     <img src="${c.img}" alt="${c.name}">
                 </div>
             `).join('');
@@ -1169,9 +1339,22 @@
             selectedColor = color;
             document.getElementById('main-image').src = color.img;
             document.getElementById('color-name').textContent = color.name;
-            document.querySelectorAll('.thumbnail').forEach((t, i) => {
-                t.classList.toggle('active', colors[i].id === id);
+            document.getElementById('selected-color-text').textContent = color.name;
+
+            // Atualizar thumbnails
+            document.querySelectorAll('.thumbnail').forEach((t) => {
+                t.classList.toggle('active', t.dataset.colorId === id);
             });
+
+            // Atualizar swatches de cor
+            document.querySelectorAll('.color-option').forEach((c) => {
+                c.classList.toggle('active', c.dataset.colorId === id);
+            });
+
+            // Limpar erro
+            document.getElementById('color-group').classList.remove('error');
+            document.getElementById('color-error').classList.remove('show');
+
             updateWhatsApp();
         }
 
@@ -1181,17 +1364,52 @@
             document.getElementById('selected-size').textContent = size;
             document.querySelectorAll('.size-option').forEach(s => s.classList.remove('active'));
             el.classList.add('active');
+
+            // Limpar erro
+            document.getElementById('size-group').classList.remove('error');
+            document.getElementById('size-error').classList.remove('show');
+
             updateWhatsApp();
         }
 
         // WhatsApp
         function updateWhatsApp() {
-            const msg = `Olá! Quero comprar o Capacete ASW R3 Pointer 2027 - Cor: ${selectedColor.name} - Tamanho: ${selectedSize}`;
-            document.getElementById('whatsapp-link').href = `https://wa.me/5541999999999?text=${encodeURIComponent(msg)}`;
+            const colorName = selectedColor ? selectedColor.name : 'Não selecionada';
+            const sizeName = selectedSize || 'Não selecionado';
+            const msg = `Olá! Quero comprar o Capacete ASW R3 Pointer 2027 - Cor: ${colorName} - Tamanho: ${sizeName}`;
+            const whatsappLink = document.getElementById('whatsapp-link');
+            if (whatsappLink) {
+                whatsappLink.href = `https://wa.me/5541999999999?text=${encodeURIComponent(msg)}`;
+            }
         }
 
         // Carrinho
         function addToCart() {
+            let hasError = false;
+
+            // Validar cor
+            if (!selectedColor) {
+                document.getElementById('color-group').classList.add('error');
+                document.getElementById('color-error').classList.add('show');
+                hasError = true;
+            }
+
+            // Validar tamanho
+            if (!selectedSize) {
+                document.getElementById('size-group').classList.add('error');
+                document.getElementById('size-error').classList.add('show');
+                hasError = true;
+            }
+
+            if (hasError) {
+                // Scroll para o primeiro erro
+                const firstError = document.querySelector('.variation-group.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
             const item = {
                 id: `asw-r3-${selectedColor.id}-${selectedSize}`,
                 name: `Capacete ASW R3 - ${selectedColor.name}`,
@@ -1217,6 +1435,7 @@
 
         // Init
         createThumbnails();
+        createColorSwatches();
         updateWhatsApp();
         updateCartUI();
     </script>
