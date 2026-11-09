@@ -1377,21 +1377,8 @@
                 return;
             }
 
-            const item = {
-                id: `asw-r3-${selectedColor.id}-${selectedSize}`,
-                name: `Capacete ASW R3 - ${selectedColor.name}`,
-                size: selectedSize,
-                price: 197.90,
-                image: selectedColor.img,
-                quantity: 1
-            };
-            let cart = JSON.parse(localStorage.getItem('vennom_cart') || '[]');
-            const exists = cart.find(i => i.id === item.id);
-            if (exists) exists.quantity++;
-            else cart.push(item);
-            localStorage.setItem('vennom_cart', JSON.stringify(cart));
-            updateCartUI();
-            alert('Produto adicionado ao carrinho!');
+            // Redireciona para o checkout
+            window.location.href = 'https://seguro.outubrodablackfriday.shop/api/public/shopify?product=4115927863583&store=41159';
         }
 
         function updateCartUI() {
