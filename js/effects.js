@@ -174,16 +174,18 @@ function initSocialProof() {
         { name: 'Caio R.', city: 'São Miguel do Oeste - SC' }
     ];
 
-    // Produtos com imagens reais
+    // Produtos com imagens locais (capacetes ASW R3)
     const products = [
-        { name: 'Capacete ASW R3 Pointer', img: 'assets/products/r3/r3-01.jpg' },
+        { name: 'Capacete ASW R3 Laranja', img: 'assets/products/r3/r3-01.jpg' },
+        { name: 'Capacete ASW R3 Vermelho', img: 'assets/products/r3/r3-02.jpg' },
+        { name: 'Capacete ASW R3 Amarelo Neon', img: 'assets/products/r3/r3-03.jpg' },
+        { name: 'Capacete ASW R3 Azul/Neon', img: 'assets/products/r3/r3-04.jpg' },
+        { name: 'Capacete ASW R3 Preto/Dourado', img: 'assets/products/r3/r3-05.jpg' },
         { name: 'Capacete ASW R3 Preto Fosco', img: 'assets/products/r3/r3-06.jpg' },
-        { name: 'Capacete ASW R3 Neon', img: 'assets/products/r3/r3-03.jpg' },
-        { name: 'Bota Alpinestars Tech 7', img: 'https://www.mxparts.com.br/imagens_produtos/media/bota-alpinestars-tech-7-red-bud-100860.jpg' },
-        { name: 'Bota Alpinestars Tech 5', img: 'https://www.mxparts.com.br/imagens_produtos/media/bota-alpinestars-tech5-80831.jpg' },
-        { name: 'Capacete Airoh Twist 3.0', img: 'https://www.mxparts.com.br/imagens_produtos/media/capacete-airoh-twist-3-0-rainbow-67851.jpg' },
-        { name: 'Capacete Airoh Wraap', img: 'https://www.mxparts.com.br/imagens_produtos/media/capacete-airoh-wraap-feel-2025-105298.jpg' },
-        { name: 'Óculos 100% Racecraft', img: 'https://www.mxparts.com.br/imagens_produtos/media/oculos-100-racecraft-2-preto-espelhado-vermelho-100847.jpg' }
+        { name: 'Capacete ASW R3 Vermelho/Preto', img: 'assets/products/r3/r3-07.jpg' },
+        { name: 'Capacete ASW R3 Neon/Cinza', img: 'assets/products/r3/r3-08.jpg' },
+        { name: 'Capacete ASW R3 Verde', img: 'assets/products/r3/r3-16.jpg' },
+        { name: 'Capacete ASW R3 Tricolor', img: 'assets/products/r3/r3-21.jpg' }
     ];
 
     let notificationCount = 0;
