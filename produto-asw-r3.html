@@ -941,8 +941,6 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="color-label">Cor: <span id="color-name">R3 Aero Laranja</span></div>
-                    <div class="thumbnail-list" id="thumbnail-list"></div>
                 </div>
 
                 <!-- Detalhes -->
@@ -1279,16 +1277,6 @@
         let selectedColor = null;
         let selectedSize = null;
 
-        // Criar thumbnails
-        function createThumbnails() {
-            const list = document.getElementById('thumbnail-list');
-            list.innerHTML = colors.map((c) => `
-                <div class="thumbnail" data-color-id="${c.id}" onclick="selectColor('${c.id}')">
-                    <img src="${c.img}" alt="${c.name}">
-                </div>
-            `).join('');
-        }
-
         // Criar swatches de cor
         function createColorSwatches() {
             const container = document.getElementById('color-options');
@@ -1305,13 +1293,7 @@
             if (!color) return;
             selectedColor = color;
             document.getElementById('main-image').src = color.img;
-            document.getElementById('color-name').textContent = color.name;
             document.getElementById('selected-color-text').textContent = color.name;
-
-            // Atualizar thumbnails
-            document.querySelectorAll('.thumbnail').forEach((t) => {
-                t.classList.toggle('active', t.dataset.colorId === id);
-            });
 
             // Atualizar swatches de cor
             document.querySelectorAll('.color-option').forEach((c) => {
@@ -1388,7 +1370,6 @@
         }
 
         // Init
-        createThumbnails();
         createColorSwatches();
         updateWhatsApp();
         updateCartUI();
