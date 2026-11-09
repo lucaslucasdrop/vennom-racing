@@ -158,26 +158,55 @@ function initRippleEffect() {
 
 // ===== NOTIFICAÇÕES DE COMPRA (Social Proof) =====
 function initSocialProof() {
-    const names = ['João', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Juliana', 'Lucas', 'Fernanda', 'Rafael', 'Camila'];
-    const cities = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Curitiba', 'Porto Alegre', 'Salvador', 'Brasília', 'Fortaleza'];
-    const products = ['Bota Alpinestars Tech 7', 'Capacete Airoh Aviator', 'Camisa Fox Racing', 'Óculos 100%', 'Luvas Alpinestars'];
+    // Nomes mais realistas e variados
+    const buyers = [
+        { name: 'Thiago R.', city: 'Cascavel - PR' },
+        { name: 'Matheus', city: 'Francisco Beltrão - PR' },
+        { name: 'Bruno S.', city: 'Chapecó - SC' },
+        { name: 'Gabriel', city: 'Foz do Iguaçu - PR' },
+        { name: 'Rodrigo M.', city: 'Pato Branco - PR' },
+        { name: 'Felipe', city: 'Toledo - PR' },
+        { name: 'André L.', city: 'Marechal C. Rondon - PR' },
+        { name: 'Gustavo', city: 'Medianeira - PR' },
+        { name: 'Daniel C.', city: 'Dois Vizinhos - PR' },
+        { name: 'Leonardo', city: 'Palmas - PR' },
+        { name: 'Vinícius', city: 'Xanxerê - SC' },
+        { name: 'Caio R.', city: 'São Miguel do Oeste - SC' }
+    ];
+
+    const products = [
+        'Capacete ASW R3 Pointer',
+        'Bota Alpinestars Tech 7',
+        'Kit Camisa + Calça Fox',
+        'Óculos Dragon MDX',
+        'Luvas Alpinestars Radar',
+        'Capacete Airoh Twist 3.0',
+        'Bota Gaerne SG-12',
+        'Colete Protetor Leatt'
+    ];
+
+    let notificationCount = 0;
+    const maxNotifications = 3; // Máximo de notificações por sessão
 
     function showNotification() {
-        const name = names[Math.floor(Math.random() * names.length)];
-        const city = cities[Math.floor(Math.random() * cities.length)];
+        if (notificationCount >= maxNotifications) return;
+        notificationCount++;
+
+        const buyer = buyers[Math.floor(Math.random() * buyers.length)];
         const product = products[Math.floor(Math.random() * products.length)];
-        const minutes = Math.floor(Math.random() * 30) + 1;
+        const minutes = Math.floor(Math.random() * 45) + 5;
 
         const notification = document.createElement('div');
         notification.className = 'social-proof-notification';
         notification.innerHTML = `
             <div class="spn-icon">🛒</div>
             <div class="spn-content">
-                <strong>${name}</strong> de ${city}
+                <strong>${buyer.name}</strong>
+                <span class="spn-city">de ${buyer.city}</span>
                 <p>Comprou <span>${product}</span></p>
                 <small>há ${minutes} minutos</small>
             </div>
-            <button class="spn-close">×</button>
+            <button class="spn-close" aria-label="Fechar">×</button>
         `;
         document.body.appendChild(notification);
 
@@ -191,13 +220,17 @@ function initSocialProof() {
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
-        }, 5000);
+        }, 6000);
     }
 
-    // Primeira notificação após 5 segundos
-    setTimeout(showNotification, 5000);
-    // Depois a cada 15-30 segundos
-    setInterval(showNotification, Math.random() * 15000 + 15000);
+    // Primeira notificação após 8 segundos (menos invasivo)
+    setTimeout(showNotification, 8000);
+    // Depois a cada 25-45 segundos (menos frequente)
+    setInterval(() => {
+        if (notificationCount < maxNotifications) {
+            showNotification();
+        }
+    }, Math.random() * 20000 + 25000);
 }
 
 // ===== CONTADOR ANIMADO =====
